@@ -18,7 +18,7 @@ namespace homework_3_MultiThreadProject.SumStrategies
             for (int i = 0; i < chunkCnt; i++)
             {
                 int start = i * chunkSize;
-                int length = (i == chunkSize - 1)
+                int length = (i == chunkCnt - 1)
                     ? (array.Length - start) 
                     : chunkSize;
                 _chunks.Enqueue((start, length));

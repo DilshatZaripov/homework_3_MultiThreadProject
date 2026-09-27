@@ -6,7 +6,7 @@
 
         public long Calculate(int[] array)
         {
-            return array.AsParallel().Sum();
+            return array.AsParallel().Sum(i => (long)i);
         }
     }
 }
