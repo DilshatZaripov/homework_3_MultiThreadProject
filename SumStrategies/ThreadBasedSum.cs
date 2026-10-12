@@ -25,7 +25,11 @@ namespace homework_3_MultiThreadProject.SumStrategies
             }
 
             long[] partialSums = new long[chunkCnt];
-            int processorCnt = Environment.ProcessorCount;
+
+            int processorCnt = Environment.ProcessorCount > 8 
+                ? 8
+                : Environment.ProcessorCount;
+
             var threads = new List<Thread>();
             int chunkIndex = 0;
 

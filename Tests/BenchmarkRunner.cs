@@ -12,7 +12,7 @@ namespace homework_3_MultiThreadProject.Tests
         /// <param name="array"></param>
         /// <param name="write"></param>
         /// <returns>Stopwatch.ElapsedMilliseconds</returns>
-        public static long TestSumStrategy(ISumStrategy strategy, int[] array, Action<string> write)
+        public static long TestSumStrategy(ISumStrategy strategy, int[] array, Action<string>? write)
         {
             write?.Invoke($"==========");
             write?.Invoke($"Testing strategy: \"{strategy.Name}\"...");

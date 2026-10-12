@@ -11,6 +11,8 @@ Thread warmUpThread = new Thread(() => Console.WriteLine("This is warm up thread
 warmUpThread.Start();
 warmUpThread.Join();
 
+await Task.Run(() => Console.WriteLine("Warm-up #2"));
+
 Console.ForegroundColor = ConsoleColor.Green;
 var testArray1 = randGenerator.Generate(100_000);
 BenchmarkRunner.TestSumStrategy(sequentialSum, testArray1, Console.WriteLine);
@@ -31,5 +33,14 @@ BenchmarkRunner.TestSumStrategy(sequentialSum, testArray3, Console.WriteLine);
 BenchmarkRunner.TestSumStrategy(threadsSum, testArray3, Console.WriteLine);
 BenchmarkRunner.TestSumStrategy(plinqSum, testArray3, Console.WriteLine);
 
+//Console.WriteLine("N\t| Seq\t| Threads\t| PLINQ");
+//for (int i = 0; i < 25; i++)
+//{
+//    Console.Write($"{i + 1}\t| ");
+//    var testArray = randGenerator.Generate(10_000_000);
+//    Console.Write($"{BenchmarkRunner.TestSumStrategy(sequentialSum, testArray, null)}\t| ");
+//    Console.Write($"{BenchmarkRunner.TestSumStrategy(threadsSum, testArray, null)}\t| ");
+//    Console.Write($"{BenchmarkRunner.TestSumStrategy(plinqSum, testArray, null)}\t|\n");
+//}
 
 Console.ForegroundColor = ConsoleColor.White;

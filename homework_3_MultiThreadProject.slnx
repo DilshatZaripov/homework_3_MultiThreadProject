@@ -1,3 +1,9 @@
 <Solution>
-  <Project Path="homework_3_MultiThreadProject.csproj" />
+  <Configurations>
+    <Platform Name="Any CPU" />
+    <Platform Name="x64" />
+  </Configurations>
+  <Project Path="homework_3_MultiThreadProject.csproj">
+    <Platform Solution="*|x64" Project="x64" />
+  </Project>
 </Solution>
